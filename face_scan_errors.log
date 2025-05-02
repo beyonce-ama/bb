@@ -1,0 +1,226 @@
+[01-May-2025 17:11:47 Europe/Berlin] Executing: C:\Users\bea\AppData\Local\Programs\Python\Python313\python.exe C:\Users\bea\Documents\xampp\htdocs\bb/recognize_face.py temp_scans/scan_hqa6m8p3c1eo2kn18fh7h0312q_1746112307.jpg
+[01-May-2025 17:11:47 Europe/Berlin] Python output: 
+[01-May-2025 17:11:47 Europe/Berlin] Python errors: C:\Users\bea\AppData\Local\Programs\Python\Python313\python.exe: can't open file 'C:\\Users\\bea\\Documents\\xampp\\htdocs\\bb/recognize_face.py': [Errno 2] No such file or directory
+
+[01-May-2025 17:11:47 Europe/Berlin] Return code: 2
+[01-May-2025 17:13:23 Europe/Berlin] Executing: C:\Users\bea\AppData\Local\Programs\Python\Python313\python.exe C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py temp_scans/scan_hqa6m8p3c1eo2kn18fh7h0312q_1746112403.jpg
+[01-May-2025 17:13:23 Europe/Berlin] Python output: 
+[01-May-2025 17:13:23 Europe/Berlin] Python errors: Traceback (most recent call last):
+  File "C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py", line 6, in <module>
+    sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)
+                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen os>", line 1068, in fdopen
+ValueError: can't have unbuffered text I/O
+
+[01-May-2025 17:13:23 Europe/Berlin] Return code: 1
+[01-May-2025 17:17:02 Europe/Berlin] Executing: C:\Users\bea\AppData\Local\Programs\Python\Python313\python.exe C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py temp_scans/scan_hqa6m8p3c1eo2kn18fh7h0312q_1746112622.jpg
+[01-May-2025 17:17:04 Europe/Berlin] Python output: 
+[01-May-2025 17:17:04 Europe/Berlin] Python errors: DEBUG: Python script started
+DEBUG: Python version: 3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]
+DEBUG: Working directory: C:\Users\bea\Documents\xampp\htdocs\bb
+DEBUG: Script location: C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py
+DEBUG: Arguments: ['C:\\Users\\bea\\Documents\\xampp\\htdocs\\bb/recognize_scan.py', 'temp_scans/scan_hqa6m8p3c1eo2kn18fh7h0312q_1746112622.jpg']
+DEBUG: Initializing face detector...
+DEBUG: Loading landmark predictor...
+DEBUG: Loading face recognition model...
+DEBUG: Processing image: temp_scans/scan_hqa6m8p3c1eo2kn18fh7h0312q_1746112622.jpg
+DEBUG: Reading image file...
+DEBUG: Converting to RGB...
+DEBUG: Detecting faces...
+DEBUG: Detecting faces...
+DEBUG: Found 0 face(s)
+DEBUG: Processing error: No face detected in the image
+{"success": false, "message": "No face detected in the image", "type": "ValueError", "timestamp": "2025-05-01T23:17:04.783500", "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\bea\\Documents\\xampp\\htdocs\\bb/recognize_scan.py\", line 284, in main\n    result = process_uploaded_image(sys.argv[1])\n  File \"C:\\Users\\bea\\Documents\\xampp\\htdocs\\bb/recognize_scan.py\", line 232, in process_uploaded_image\n    raise ValueError(\"No face detected in the image\")\nValueError: No face detected in the image\n"}
+
+[01-May-2025 17:17:04 Europe/Berlin] Return code: 1
+[01-May-2025 17:19:25 Europe/Berlin] Executing: C:\Users\bea\AppData\Local\Programs\Python\Python313\python.exe C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py temp_scans/scan_hqa6m8p3c1eo2kn18fh7h0312q_1746112765.jpg
+[01-May-2025 17:19:29 Europe/Berlin] Python output: {"success": true, "registration_number": "1", "confidence": 0.5991140160902744, "timestamp": "2025-05-01T23:19:28.972295"}
+
+[01-May-2025 17:19:29 Europe/Berlin] Python errors: DEBUG: Python script started
+DEBUG: Python version: 3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]
+DEBUG: Working directory: C:\Users\bea\Documents\xampp\htdocs\bb
+DEBUG: Script location: C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py
+DEBUG: Arguments: ['C:\\Users\\bea\\Documents\\xampp\\htdocs\\bb/recognize_scan.py', 'temp_scans/scan_hqa6m8p3c1eo2kn18fh7h0312q_1746112765.jpg']
+DEBUG: Initializing face detector...
+DEBUG: Loading landmark predictor...
+DEBUG: Loading face recognition model...
+DEBUG: Processing image: temp_scans/scan_hqa6m8p3c1eo2kn18fh7h0312q_1746112765.jpg
+DEBUG: Reading image file...
+DEBUG: Converting to RGB...
+DEBUG: Detecting faces...
+DEBUG: Detecting faces...
+DEBUG: Found 1 face(s)
+DEBUG: Encoding face...
+DEBUG: Predicting landmarks...
+DEBUG: Computing face descriptors...
+DEBUG: Loading employee encodings...
+DEBUG: Connecting to database...
+DEBUG: Querying employee photos...
+DEBUG: Processing 1 employees...
+DEBUG: Processing photo for 1
+DEBUG: Loading image from bytes...
+DEBUG: Decoding image...
+DEBUG: Converting to RGB...
+DEBUG: Detecting faces...
+DEBUG: Found 1 face(s)
+DEBUG: Predicting landmarks...
+DEBUG: Computing face descriptors...
+DEBUG: Successfully encoded face
+DEBUG: Generated 1 valid encodings
+DEBUG: Database connection closed
+DEBUG: Finding best match...
+DEBUG: Calculated distances: [0.40088598]
+DEBUG: Distance to 1: 0.40
+DEBUG: Best match: 1 (confidence: 0.60)
+
+[01-May-2025 17:19:29 Europe/Berlin] Return code: 0
+[01-May-2025 17:19:29 Europe/Berlin] PHP Warning:  Undefined variable $pdo in C:\Users\bea\Documents\xampp\htdocs\bb\process_face_scan.php on line 166
+[01-May-2025 17:19:29 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in C:\Users\bea\Documents\xampp\htdocs\bb\process_face_scan.php:166
+Stack trace:
+#0 {main}
+  thrown in C:\Users\bea\Documents\xampp\htdocs\bb\process_face_scan.php on line 166
+[01-May-2025 17:20:25 Europe/Berlin] Executing: C:\Users\bea\AppData\Local\Programs\Python\Python313\python.exe C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py temp_scans/scan_hqa6m8p3c1eo2kn18fh7h0312q_1746112825.jpg
+[01-May-2025 17:20:25 Europe/Berlin] Python output: 
+[01-May-2025 17:20:25 Europe/Berlin] Python errors: Traceback (most recent call last):
+  File "C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py", line 6, in <module>
+    sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)
+                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen os>", line 1068, in fdopen
+ValueError: can't have unbuffered text I/O
+
+[01-May-2025 17:20:25 Europe/Berlin] Return code: 1
+[01-May-2025 17:20:39 Europe/Berlin] Executing: C:\Users\bea\AppData\Local\Programs\Python\Python313\python.exe C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py temp_scans/scan_hqa6m8p3c1eo2kn18fh7h0312q_1746112839.jpg
+[01-May-2025 17:20:39 Europe/Berlin] Python output: 
+[01-May-2025 17:20:39 Europe/Berlin] Python errors: Traceback (most recent call last):
+  File "C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py", line 6, in <module>
+    sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)
+                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen os>", line 1068, in fdopen
+ValueError: can't have unbuffered text I/O
+
+[01-May-2025 17:20:39 Europe/Berlin] Return code: 1
+[01-May-2025 17:20:50 Europe/Berlin] Executing: C:\Users\bea\AppData\Local\Programs\Python\Python313\python.exe C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py temp_scans/scan_hqa6m8p3c1eo2kn18fh7h0312q_1746112850.jpg
+[01-May-2025 17:20:50 Europe/Berlin] Python output: 
+[01-May-2025 17:20:50 Europe/Berlin] Python errors: Traceback (most recent call last):
+  File "C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py", line 6, in <module>
+    sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)
+                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen os>", line 1068, in fdopen
+ValueError: can't have unbuffered text I/O
+
+[01-May-2025 17:20:50 Europe/Berlin] Return code: 1
+[01-May-2025 17:34:15 Europe/Berlin] Executing: C:\Users\bea\AppData\Local\Programs\Python\Python313\python.exe C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py temp_scans/scan_hqa6m8p3c1eo2kn18fh7h0312q_1746113655.jpg
+[01-May-2025 17:34:28 Europe/Berlin] Python output: Python script started
+Python version: 3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]
+Working directory: C:\Users\bea\Documents\xampp\htdocs\bb
+Script location: C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py
+Arguments: ['C:\\Users\\bea\\Documents\\xampp\\htdocs\\bb/recognize_scan.py', 'temp_scans/scan_hqa6m8p3c1eo2kn18fh7h0312q_1746113655.jpg']
+{"success": true, "registration_number": "1", "confidence": 0.4583179149160952, "timestamp": "2025-05-01T23:34:28.478895"}
+
+[01-May-2025 17:34:28 Europe/Berlin] Python errors: 
+[01-May-2025 17:34:28 Europe/Berlin] Return code: 0
+[01-May-2025 17:46:34 Europe/Berlin] Executing: C:\Users\bea\AppData\Local\Programs\Python\Python313\python.exe C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py temp_scans/scan_hqa6m8p3c1eo2kn18fh7h0312q_1746114394.jpg
+[01-May-2025 17:46:42 Europe/Berlin] Python output: Python script started
+Python version: 3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]
+Working directory: C:\Users\bea\Documents\xampp\htdocs\bb
+Script location: C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py
+Arguments: ['C:\\Users\\bea\\Documents\\xampp\\htdocs\\bb/recognize_scan.py', 'temp_scans/scan_hqa6m8p3c1eo2kn18fh7h0312q_1746114394.jpg']
+{"success": true, "registration_number": "1", "confidence": 0.5355489149067371, "timestamp": "2025-05-01T23:46:41.887784"}
+
+[01-May-2025 17:46:42 Europe/Berlin] Python errors: 
+[01-May-2025 17:46:42 Europe/Berlin] Return code: 0
+[01-May-2025 17:46:42 Europe/Berlin] PHP Warning:  Undefined variable $pdo in C:\Users\bea\Documents\xampp\htdocs\bb\process_face_scan.php on line 176
+[01-May-2025 17:46:42 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in C:\Users\bea\Documents\xampp\htdocs\bb\process_face_scan.php:176
+Stack trace:
+#0 {main}
+  thrown in C:\Users\bea\Documents\xampp\htdocs\bb\process_face_scan.php on line 176
+[01-May-2025 17:55:41 Europe/Berlin] Executing: C:\Users\bea\AppData\Local\Programs\Python\Python313\python.exe C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py temp_scans/scan_hqa6m8p3c1eo2kn18fh7h0312q_1746114941.jpg
+[01-May-2025 17:55:46 Europe/Berlin] Python output: Python script started
+Python version: 3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]
+Working directory: C:\Users\bea\Documents\xampp\htdocs\bb
+Script location: C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py
+Arguments: ['C:\\Users\\bea\\Documents\\xampp\\htdocs\\bb/recognize_scan.py', 'temp_scans/scan_hqa6m8p3c1eo2kn18fh7h0312q_1746114941.jpg']
+{"success": true, "registration_number": "1", "confidence": 0.5359982680457684, "timestamp": "2025-05-01T23:55:46.461981"}
+
+[01-May-2025 17:55:46 Europe/Berlin] Python errors: 
+[01-May-2025 17:55:46 Europe/Berlin] Return code: 0
+[01-May-2025 18:01:30 Europe/Berlin] Executing: C:\Users\bea\AppData\Local\Programs\Python\Python313\python.exe C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py temp_scans/scan_hqa6m8p3c1eo2kn18fh7h0312q_1746115290.jpg
+[01-May-2025 18:01:33 Europe/Berlin] Python output: Python script started
+Python version: 3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]
+Working directory: C:\Users\bea\Documents\xampp\htdocs\bb
+Script location: C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py
+Arguments: ['C:\\Users\\bea\\Documents\\xampp\\htdocs\\bb/recognize_scan.py', 'temp_scans/scan_hqa6m8p3c1eo2kn18fh7h0312q_1746115290.jpg']
+{"success": true, "registration_number": "1", "confidence": 0.6092338050209236, "timestamp": "2025-05-02T00:01:33.860454"}
+
+[01-May-2025 18:01:33 Europe/Berlin] Python errors: 
+[01-May-2025 18:01:33 Europe/Berlin] Return code: 0
+[01-May-2025 18:01:59 Europe/Berlin] Executing: C:\Users\bea\AppData\Local\Programs\Python\Python313\python.exe C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py temp_scans/scan_hqa6m8p3c1eo2kn18fh7h0312q_1746115319.jpg
+[01-May-2025 18:02:03 Europe/Berlin] Python output: Python script started
+Python version: 3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]
+Working directory: C:\Users\bea\Documents\xampp\htdocs\bb
+Script location: C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py
+Arguments: ['C:\\Users\\bea\\Documents\\xampp\\htdocs\\bb/recognize_scan.py', 'temp_scans/scan_hqa6m8p3c1eo2kn18fh7h0312q_1746115319.jpg']
+{"success": true, "registration_number": "1", "confidence": 0.5613661159006773, "timestamp": "2025-05-02T00:02:03.560368"}
+
+[01-May-2025 18:02:03 Europe/Berlin] Python errors: 
+[01-May-2025 18:02:03 Europe/Berlin] Return code: 0
+[01-May-2025 18:02:29 Europe/Berlin] Executing: C:\Users\bea\AppData\Local\Programs\Python\Python313\python.exe C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py temp_scans/scan_hqa6m8p3c1eo2kn18fh7h0312q_1746115349.jpg
+[01-May-2025 18:02:32 Europe/Berlin] Python output: Python script started
+Python version: 3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]
+Working directory: C:\Users\bea\Documents\xampp\htdocs\bb
+Script location: C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py
+Arguments: ['C:\\Users\\bea\\Documents\\xampp\\htdocs\\bb/recognize_scan.py', 'temp_scans/scan_hqa6m8p3c1eo2kn18fh7h0312q_1746115349.jpg']
+{"success": true, "registration_number": "1", "confidence": 0.5693865167729633, "timestamp": "2025-05-02T00:02:32.818739"}
+
+[01-May-2025 18:02:32 Europe/Berlin] Python errors: 
+[01-May-2025 18:02:32 Europe/Berlin] Return code: 0
+[01-May-2025 18:02:44 Europe/Berlin] Executing: C:\Users\bea\AppData\Local\Programs\Python\Python313\python.exe C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py temp_scans/scan_hqa6m8p3c1eo2kn18fh7h0312q_1746115364.jpg
+[01-May-2025 18:02:48 Europe/Berlin] Python output: Python script started
+Python version: 3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]
+Working directory: C:\Users\bea\Documents\xampp\htdocs\bb
+Script location: C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py
+Arguments: ['C:\\Users\\bea\\Documents\\xampp\\htdocs\\bb/recognize_scan.py', 'temp_scans/scan_hqa6m8p3c1eo2kn18fh7h0312q_1746115364.jpg']
+{"success": true, "registration_number": "1", "confidence": 0.5556311656486048, "timestamp": "2025-05-02T00:02:48.150038"}
+
+[01-May-2025 18:02:48 Europe/Berlin] Python errors: 
+[01-May-2025 18:02:48 Europe/Berlin] Return code: 0
+[01-May-2025 19:05:35 Europe/Berlin] Executing: C:\Users\bea\AppData\Local\Programs\Python\Python313\python.exe C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py temp_scans/scan_hobhfg8q8t7h1fr6itphgo0fn8_1746119135.jpg
+[01-May-2025 19:05:39 Europe/Berlin] Python output: Python script started
+Python version: 3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]
+Working directory: C:\Users\bea\Documents\xampp\htdocs\bb
+Script location: C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py
+Arguments: ['C:\\Users\\bea\\Documents\\xampp\\htdocs\\bb/recognize_scan.py', 'temp_scans/scan_hobhfg8q8t7h1fr6itphgo0fn8_1746119135.jpg']
+{"success": true, "registration_number": "1", "confidence": 0.7507680283872131, "timestamp": "2025-05-02T01:05:39.249996"}
+
+[01-May-2025 19:05:39 Europe/Berlin] Python errors: 
+[01-May-2025 19:05:39 Europe/Berlin] Return code: 0
+[01-May-2025 19:05:56 Europe/Berlin] Executing: C:\Users\bea\AppData\Local\Programs\Python\Python313\python.exe C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py temp_scans/scan_hobhfg8q8t7h1fr6itphgo0fn8_1746119156.jpg
+[01-May-2025 19:06:00 Europe/Berlin] Python output: Python script started
+Python version: 3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]
+Working directory: C:\Users\bea\Documents\xampp\htdocs\bb
+Script location: C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py
+Arguments: ['C:\\Users\\bea\\Documents\\xampp\\htdocs\\bb/recognize_scan.py', 'temp_scans/scan_hobhfg8q8t7h1fr6itphgo0fn8_1746119156.jpg']
+{"success": true, "registration_number": "1", "confidence": 0.8139267421100933, "timestamp": "2025-05-02T01:06:00.239988"}
+
+[01-May-2025 19:06:00 Europe/Berlin] Python errors: 
+[01-May-2025 19:06:00 Europe/Berlin] Return code: 0
+[01-May-2025 19:10:19 Europe/Berlin] Executing: C:\Users\bea\AppData\Local\Programs\Python\Python313\python.exe C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py temp_scans/scan_hobhfg8q8t7h1fr6itphgo0fn8_1746119419.jpg
+[01-May-2025 19:10:23 Europe/Berlin] Python output: Python script started
+Python version: 3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]
+Working directory: C:\Users\bea\Documents\xampp\htdocs\bb
+Script location: C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py
+Arguments: ['C:\\Users\\bea\\Documents\\xampp\\htdocs\\bb/recognize_scan.py', 'temp_scans/scan_hobhfg8q8t7h1fr6itphgo0fn8_1746119419.jpg']
+{"success": true, "registration_number": "1", "confidence": 0.7417187565478296, "timestamp": "2025-05-02T01:10:23.493855"}
+
+[01-May-2025 19:10:23 Europe/Berlin] Python errors: 
+[01-May-2025 19:10:23 Europe/Berlin] Return code: 0
+[01-May-2025 19:10:30 Europe/Berlin] Executing: C:\Users\bea\AppData\Local\Programs\Python\Python313\python.exe C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py temp_scans/scan_hobhfg8q8t7h1fr6itphgo0fn8_1746119430.jpg
+[01-May-2025 19:10:34 Europe/Berlin] Python output: Python script started
+Python version: 3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]
+Working directory: C:\Users\bea\Documents\xampp\htdocs\bb
+Script location: C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py
+Arguments: ['C:\\Users\\bea\\Documents\\xampp\\htdocs\\bb/recognize_scan.py', 'temp_scans/scan_hobhfg8q8t7h1fr6itphgo0fn8_1746119430.jpg']
+{"success": true, "registration_number": "1", "confidence": 0.7400031877641643, "timestamp": "2025-05-02T01:10:34.590168"}
+
+[01-May-2025 19:10:34 Europe/Berlin] Python errors: 
+[01-May-2025 19:10:34 Europe/Berlin] Return code: 0
