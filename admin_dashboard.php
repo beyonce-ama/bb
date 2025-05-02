@@ -21,40 +21,58 @@ if ($conn->connect_error) {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
-      background-color: #f4f6f9;
+      background-color: #ffffff;
       font-family: 'Poppins', sans-serif;
     }
+    
     .sidebar {
       height: 100vh;
-      background: #ffffff;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      background: #272343;
       padding-top: 20px;
       position: relative;
     }
     .sidebar a {
       display: block;
       padding: 10px 20px;
-      color: #333;
+      color: #ffffff;
       text-decoration: none;
       font-weight: 500;
     }
     .sidebar a:hover {
-      background: #e9ecef;
+      background:rgb(91, 79, 165);
+      border-radius: 10px;
     }
     .sidebar .active {
-      background: #6f42c1;
+      background:rgb(91, 79, 165);
       color: white;
       border-radius: 10px;
     }
+    .settings {
+      position: absolute;
+      bottom: 20px;
+      width: 80%;
+      border-radius: 10px;
+    }
+    .settings a{
+      color: #ffffff !important;
+    }
+    .sidebar h4 {
+      color: #ffffff !important;
+    }
+
     .topbar {
       height: 60px;
-      background: #fff;
+      background-color: #ffffff;
+      border-bottom: solid #bae8e8 1px;
       padding: 10px 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+     
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
+ 
+
+
     .content {
       padding: 20px;
     }
@@ -72,11 +90,7 @@ if ($conn->connect_error) {
       float: right;
       margin-bottom: 10px;
     }
-    .settings {
-      position: absolute;
-      bottom: 20px;
-      width: 100%;
-    }
+  
   </style>
 </head>
 <body>
@@ -88,7 +102,6 @@ if ($conn->connect_error) {
     <a href="admin_dashboard.php" class="active">Dashboard</a>
     <a href="manage_employee.php">Manage Employee</a>
     <div class="settings">
-      <a href="#">Settings</a>
       <a href="logout.php" class="text-danger">Logout</a>
     </div>
   </div>
@@ -105,7 +118,7 @@ if ($conn->connect_error) {
     </div>
 
     <!-- Content -->
-    <div class="content container-fluid">
+    <div class="content container-fluid p-5">
       
       <!-- Today's Date Added Here -->
       <div class="d-flex justify-content-between align-items-center mb-3">

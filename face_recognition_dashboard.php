@@ -35,7 +35,8 @@ $username = $_SESSION['user']['name'];
             justify-content: space-between;
             align-items: center;
             padding: 10px;
-            background-color: #f8f9fa;
+            background-color: #ffffff;
+            border-bottom: solid #bae8e8 1px;
         }
         .content {
             padding: 20px;
@@ -83,30 +84,64 @@ $username = $_SESSION['user']['name'];
             color: #666;
             margin-top: 10px;
         }
+
+        .sidebar {
+      height: 100vh;
+      background: #272343;
+      padding-top: 20px;
+      position: relative;
+    }
+    .sidebar a {
+      display: block;
+      padding: 10px 20px;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .sidebar a:hover {
+      background:rgb(91, 79, 165);
+      border-radius: 10px;
+    }
+    .sidebar .active {
+      background:rgb(91, 79, 165);
+      color: white;
+      border-radius: 10px;
+    }
+    .settings {
+      position: absolute;
+      bottom: 20px;
+      width: 80%;
+      border-radius: 10px;
+    }
+    .settings a{
+      color: #ffffff !important;
+    }
+    .sidebar h4 {
+      color: #ffffff !important;
+    }
+
+
     </style>
 </head>
 <body>
 <!-- Sidebar -->
-<div class="sidebar">
-    <h4>Face Recognition</h4>
-    <ul class="nav flex-column">
-        <li class="nav-item">
-            <a href="user_dashboard.php" class="nav-link text-white">Home</a>
-        </li>
-        <li class="nav-item">
-            <a href="face_recognition_dashboard.php" class="nav-link text-white active">Face Recognition</a>
-        </li>
-        <li class="nav-item">
-            <a href="logout.php" class="nav-link text-white">Logout</a>
-        </li>
-    </ul>
-</div>
+
+
+<div class="sidebar p-3">
+    <h4 class="mb-4 text-dark">Face Recognition</h4>
+    <a href="user_dashboard.php" >Home</a>
+    <a href="face_recognition_dashboard.php" class="active">Face Recognition</a>
+    <div class="settings">
+      <a href="logout.php" class="text-danger">Logout</a>
+    </div>
+  </div>
+
 
 <!-- Main Content -->
 <div class="flex-grow-1">
     <!-- Topbar -->
     <div class="topbar">
-        <h5>Face Recognition Dashboard</h5>
+        <h5> </h5>
         <div>
             <span class="badge bg-light text-dark">@ <?php echo htmlspecialchars($username); ?></span>
             <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="User" width="40" height="40" class="rounded-circle ms-2">
@@ -114,7 +149,7 @@ $username = $_SESSION['user']['name'];
     </div>
 
     <!-- Content -->
-    <div class="content container-fluid">
+    <div class="content container">
         <h3>Welcome, <?php echo htmlspecialchars($username); ?>!</h3>
         <p>Click the button below to mark your attendance using facial recognition.</p>
         <hr>

@@ -35,35 +35,71 @@ $username = $_SESSION['user']['name'] ?? 'User';
             color: white;
             padding: 15px;
         }
+  
+        .content {
+            padding: 20px;
+        }
+
+
+        .sidebar {
+      height: 100vh;
+      background: #272343;
+      padding-top: 20px;
+      position: relative;
+    }
+    .sidebar a {
+      display: block;
+      padding: 10px 20px;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .sidebar a:hover {
+      background:rgb(91, 79, 165);
+      border-radius: 10px;
+    }
+    .sidebar .active {
+      background:rgb(91, 79, 165);
+      color: white;
+      border-radius: 10px;
+    }
+    .settings {
+      position: absolute;
+      bottom: 20px;
+      width: 80%;
+      border-radius: 10px;
+    }
+    .settings a{
+      color: #ffffff !important;
+    }
+    .sidebar h4 {
+      color: #ffffff !important;
+    }
         .topbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 10px;
-            background-color: #f8f9fa;
+            background-color: #ffffff;
+            border-bottom: solid #bae8e8 1px;
         }
-        .content {
-            padding: 20px;
-        }
+
     </style>
 </head>
 <body>
 
 <!-- Sidebar -->
-<div class="sidebar">
-    <h4>Dashboard</h4>
-    <ul class="nav flex-column">
-        <li class="nav-item">
-            <a href="user_dashboard.php" class="nav-link text-white">Home</a>
-        </li>
-        <li class="nav-item">
-            <a href="face_recognition_dashboard.php" class="nav-link text-white">Face Recognition</a>
-        </li>
-        <li class="nav-item">
-            <a href="logout.php" class="nav-link text-white">Logout</a>
-        </li>
-    </ul>
-</div>
+ 
+
+<div class="sidebar p-3">
+    <h4 class="mb-4 text-dark">Dashboard</h4>
+    <a href="user_dashboard.php" class="active">Home</a>
+    <a href="face_recognition_dashboard.php">Face Recognition</a>
+    <div class="settings">
+      <a href="logout.php" class="text-danger">Logout</a>
+    </div>
+  </div>
+
 
 <!-- Main Content -->
 <div class="flex-grow-1">
@@ -77,7 +113,7 @@ $username = $_SESSION['user']['name'] ?? 'User';
     </div>
 
     <!-- Content -->
-    <div class="content">
+    <div class="content container ">
     <h3>User Records</h3>
 <?php
 if (!isset($conn)) {
