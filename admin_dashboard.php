@@ -22,7 +22,7 @@ if ($conn->connect_error) {
   <style>
     body {
       background-color: #ffffff;
-      font-family: 'Poppins', sans-serif;
+ 
     }
     
     .sidebar {
@@ -36,7 +36,7 @@ if ($conn->connect_error) {
       padding: 10px 20px;
       color: #ffffff;
       text-decoration: none;
-      font-weight: 500;
+ 
     }
     .sidebar a:hover {
       background:rgb(91, 79, 165);

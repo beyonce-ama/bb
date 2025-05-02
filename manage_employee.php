@@ -113,7 +113,7 @@ if (isset($_GET['delete_id'])) {
       padding: 10px 20px;
       color: #ffffff;
       text-decoration: none;
-      font-weight: 500;
+ 
     }
     .sidebar a:hover {
       background:rgb(91, 79, 165);
