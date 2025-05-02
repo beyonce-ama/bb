@@ -224,3 +224,53 @@ Arguments: ['C:\\Users\\bea\\Documents\\xampp\\htdocs\\bb/recognize_scan.py', 't
 
 [01-May-2025 19:10:34 Europe/Berlin] Python errors: 
 [01-May-2025 19:10:34 Europe/Berlin] Return code: 0
+[02-May-2025 05:39:26 Europe/Berlin] Executing: C:\Users\bea\AppData\Local\Programs\Python\Python313\python.exe C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py temp_scans/scan_89ic4njlpa3bsnshkvke0bmsis_1746157166.jpg
+[02-May-2025 05:39:32 Europe/Berlin] Python output: Python script started
+Python version: 3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]
+Working directory: C:\Users\bea\Documents\xampp\htdocs\bb
+Script location: C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py
+Arguments: ['C:\\Users\\bea\\Documents\\xampp\\htdocs\\bb/recognize_scan.py', 'temp_scans/scan_89ic4njlpa3bsnshkvke0bmsis_1746157166.jpg']
+{"success": true, "registration_number": "2", "confidence": 0.7835750972677965, "timestamp": "2025-05-02T11:39:32.336205"}
+
+[02-May-2025 05:39:32 Europe/Berlin] Python errors: 
+[02-May-2025 05:39:32 Europe/Berlin] Return code: 0
+[02-May-2025 06:31:43 Europe/Berlin] Executing: C:\Users\bea\AppData\Local\Programs\Python\Python313\python.exe C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py temp_scans/scan_89ic4njlpa3bsnshkvke0bmsis_1746160303.jpg
+[02-May-2025 06:31:48 Europe/Berlin] Python output: Python script started
+Python version: 3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]
+Working directory: C:\Users\bea\Documents\xampp\htdocs\bb
+Script location: C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py
+Arguments: ['C:\\Users\\bea\\Documents\\xampp\\htdocs\\bb/recognize_scan.py', 'temp_scans/scan_89ic4njlpa3bsnshkvke0bmsis_1746160303.jpg']
+{"success": true, "registration_number": "2", "confidence": 0.448787863412208, "timestamp": "2025-05-02T12:31:48.062126"}
+
+[02-May-2025 06:31:48 Europe/Berlin] Python errors: 
+[02-May-2025 06:31:48 Europe/Berlin] Return code: 0
+[02-May-2025 06:33:24 Europe/Berlin] Executing: C:\Users\bea\AppData\Local\Programs\Python\Python313\python.exe C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py temp_scans/scan_89ic4njlpa3bsnshkvke0bmsis_1746160404.jpg
+[02-May-2025 06:33:29 Europe/Berlin] Python output: Python script started
+Python version: 3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]
+Working directory: C:\Users\bea\Documents\xampp\htdocs\bb
+Script location: C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py
+Arguments: ['C:\\Users\\bea\\Documents\\xampp\\htdocs\\bb/recognize_scan.py', 'temp_scans/scan_89ic4njlpa3bsnshkvke0bmsis_1746160404.jpg']
+{"success": true, "registration_number": "3", "confidence": 0.6507408502187533, "timestamp": "2025-05-02T12:33:29.810164"}
+
+[02-May-2025 06:33:29 Europe/Berlin] Python errors: 
+[02-May-2025 06:33:29 Europe/Berlin] Return code: 0
+[02-May-2025 06:33:40 Europe/Berlin] Executing: C:\Users\bea\AppData\Local\Programs\Python\Python313\python.exe C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py temp_scans/scan_89ic4njlpa3bsnshkvke0bmsis_1746160419.jpg
+[02-May-2025 06:33:45 Europe/Berlin] Python output: Python script started
+Python version: 3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]
+Working directory: C:\Users\bea\Documents\xampp\htdocs\bb
+Script location: C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py
+Arguments: ['C:\\Users\\bea\\Documents\\xampp\\htdocs\\bb/recognize_scan.py', 'temp_scans/scan_89ic4njlpa3bsnshkvke0bmsis_1746160419.jpg']
+{"success": true, "registration_number": "2", "confidence": 0.6513573409831764, "timestamp": "2025-05-02T12:33:45.231806"}
+
+[02-May-2025 06:33:45 Europe/Berlin] Python errors: 
+[02-May-2025 06:33:45 Europe/Berlin] Return code: 0
+[02-May-2025 06:34:00 Europe/Berlin] Executing: C:\Users\bea\AppData\Local\Programs\Python\Python313\python.exe C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py temp_scans/scan_89ic4njlpa3bsnshkvke0bmsis_1746160440.jpg
+[02-May-2025 06:34:05 Europe/Berlin] Python output: Python script started
+Python version: 3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]
+Working directory: C:\Users\bea\Documents\xampp\htdocs\bb
+Script location: C:\Users\bea\Documents\xampp\htdocs\bb/recognize_scan.py
+Arguments: ['C:\\Users\\bea\\Documents\\xampp\\htdocs\\bb/recognize_scan.py', 'temp_scans/scan_89ic4njlpa3bsnshkvke0bmsis_1746160440.jpg']
+{"success": true, "registration_number": "3", "confidence": 0.6997263802032703, "timestamp": "2025-05-02T12:34:05.318966"}
+
+[02-May-2025 06:34:05 Europe/Berlin] Python errors: 
+[02-May-2025 06:34:05 Europe/Berlin] Return code: 0

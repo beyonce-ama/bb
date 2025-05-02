@@ -102,25 +102,27 @@ if (isset($_GET['delete_id'])) {
   <title>Manage Employees</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-   .sidebar {
+    body {
+      overflow-x: hidden;
+    }
+    .sidebar {
       height: 100vh;
       background: #272343;
       padding-top: 20px;
-      position: relative;
+      position: fixed;
     }
     .sidebar a {
       display: block;
       padding: 10px 20px;
       color: #ffffff;
       text-decoration: none;
- 
     }
     .sidebar a:hover {
-      background:rgb(91, 79, 165);
+      background: rgb(91, 79, 165);
       border-radius: 10px;
     }
     .sidebar .active {
-      background:rgb(91, 79, 165);
+      background: rgb(91, 79, 165);
       color: white;
       border-radius: 10px;
     }
@@ -132,9 +134,8 @@ if (isset($_GET['delete_id'])) {
       bottom: 20px;
       width: 80%;
       border-radius: 10px;
-
     }
-    .settings a{
+    .settings a {
       color: #ffffff !important;
     }
     .topbar {
@@ -145,17 +146,17 @@ if (isset($_GET['delete_id'])) {
       display: flex;
       align-items: center;
       justify-content: space-between;
+     
     }
-
-
     .content {
-      margin-left: 180px;
+      margin-left: 230px;
       padding: 20px;
     }
     video {
       border: 2px solid #007bff;
       border-radius: 5px;
       margin-bottom: 10px;
+      max-width: 100%;
     }
     #captured-photo img {
       margin: 5px;
@@ -164,144 +165,152 @@ if (isset($_GET['delete_id'])) {
     }
     .face-guide {
       position: absolute;
-      top: 20px;
-      left: 50%;
+      top: 60px;
+      left: 25%;
       transform: translateX(-50%);
-      width: 200px;
-      height: 250px;
+      width: 300px;
+      height: 320px;
       border: 3px solid #28a745;
       z-index: 10;
       pointer-events: none;
     }
-
+    .table-responsive {
+      overflow-x: auto;
+    }
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+      .content {
+        margin-left: 0;
+      }
+    }
   </style>
 </head>
 <body onload="openCamera()">
 
 <div class="d-flex">
-  
-    <!-- Sidebar -->
-    <div class="sidebar p-3">
-      <h4 class="mb-4">Attendance Ms</h4>
-      <a href="admin_dashboard.php">Dashboard</a>
-      <a href="manage_employee.php"  class="active">Manage Employee</a>
-      <div class="settings">
-        <a href="logout.php" class="text-danger">Logout</a>
-      </div>
+  <!-- Sidebar -->
+  <div class="sidebar p-3">
+    <h4 class="mb-4">Attendance Ms</h4>
+    <a href="admin_dashboard.php">Dashboard</a>
+    <a href="manage_employee.php" class="active">Manage Employee</a>
+    <div class="settings">
+      <a href="logout.php" class="text-danger">Logout</a>
     </div>
+  </div>
 
-<div class="flex-grow-1">
-
-<div class="topbar justify-content-end d-flex">
- 
+  <div class="flex-grow-1">
+    <div class="topbar justify-content-end d-flex">
       <div>
         <span class="badge bg-light text-dark">@ <?php echo htmlspecialchars($username); ?></span>
         <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="User" width="40" height="40" class="rounded-circle ms-2">
       </div>
     </div>
 
-<div class="container">
-  
-<h2 class="mt-4">Manage Employees</h2>
+    <div class="content">
+      <h2 class="mt-4">Manage Employees</h2>
 
-<button class="btn btn-primary mb-3" onclick="showAddForm()">Add Employee</button>
+      <button class="btn btn-primary mb-3" onclick="showAddForm()">Add Employee</button>
 
-<div id="addEmployeeForm" style="display:none;">
-  <form method="POST" enctype="multipart/form-data">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group mb-3">
-          <label>First Name</label>
-          <input type="text" name="first_name" class="form-control" required>
-        </div>
-        <div class="form-group mb-3">
-          <label>Last Name</label>
-          <input type="text" name="last_name" class="form-control" required>
-        </div>
-        <div class="form-group mb-3">
-          <label>Email</label>
-          <input type="email" name="email" class="form-control" required>
-        </div>
+      <div id="addEmployeeForm" style="display:none;">
+        <form method="POST" enctype="multipart/form-data">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group mb-3">
+                <label>First Name</label>
+                <input type="text" name="first_name" class="form-control" required>
+              </div>
+              <div class="form-group mb-3">
+                <label>Last Name</label>
+                <input type="text" name="last_name" class="form-control" required>
+              </div>
+              <div class="form-group mb-3">
+                <label>Email</label>
+                <input type="email" name="email" class="form-control" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group mb-3">
+                <label>Faculty</label>
+                <input type="text" name="faculty" class="form-control" required>
+              </div>
+              <div class="form-group mb-3">
+                <label>Course</label>
+                <input type="text" name="course" class="form-control" required>
+              </div>
+              <div class="form-group mb-3">
+                <label>Registration Number</label>
+                <input type="text" name="registration_number" class="form-control" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group mb-3">
+            <label>Capture 5 Photos for Face Recognition</label>
+            <div class="position-relative">
+              <div class="face-guide"></div>
+              <video id="video" width="640" height="480" autoplay></video>
+              <button type="button" onclick="captureImage()" class="btn btn-success mb-2">Capture Photo</button>
+              <canvas id="canvas" style="display:none;"></canvas>
+              <div id="captured-photo" class="d-flex flex-wrap"></div>
+              <div id="capture-status" class="text-muted"></div>
+            </div>
+            <input type="hidden" name="captured_images" id="captured_images">
+          </div>
+
+          <button type="submit" name="add_employee" class="btn btn-success">Submit</button>
+          <button type="button" onclick="hideAddForm()" class="btn btn-secondary">Back</button>
+        </form>
       </div>
-      <div class="col-md-6">
-        <div class="form-group mb-3">
-          <label>Faculty</label>
-          <input type="text" name="faculty" class="form-control" required>
-        </div>
-        <div class="form-group mb-3">
-          <label>Course</label>
-          <input type="text" name="course" class="form-control" required>
-        </div>
-        <div class="form-group mb-3">
-          <label>Registration Number</label>
-          <input type="text" name="registration_number" class="form-control" required>
-        </div>
+
+      <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search employees..." class="form-control mb-3" style="max-width: 300px;">
+
+      <div class="table-responsive shadow-sm p-3">
+        <table class="table table-light table-striped">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+              <th>Faculty</th>
+              <th>Course</th>
+              <th>Registration Number</th>
+              <th>Created At</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="employeeTable">
+            <?php
+            $result = $conn->query("SELECT * FROM employees ORDER BY id DESC");
+            if ($result->num_rows > 0):
+                while ($row = $result->fetch_assoc()):
+            ?>
+            <tr>
+              <td><?= htmlspecialchars($row['id']) ?></td>
+              <td><?= htmlspecialchars($row['first_name']) ?></td>
+              <td><?= htmlspecialchars($row['last_name']) ?></td>
+              <td><?= htmlspecialchars($row['email']) ?></td>
+              <td><?= htmlspecialchars($row['faculty']) ?></td>
+              <td><?= htmlspecialchars($row['course']) ?></td>
+              <td><?= htmlspecialchars($row['registration_number']) ?></td>
+              <td><?= htmlspecialchars($row['created_at']) ?></td>
+              <td>
+                <a href="edit.php?id=<?= $row['id'] ?>" class="btn btn-warning btn-sm">Edit</a>
+                <a href="?delete_id=<?= $row['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to delete?')">Delete</a>
+              </td>
+            </tr>
+            <?php endwhile; else: ?>
+            <tr><td colspan="10">No employees found.</td></tr>
+            <?php endif; ?>
+          </tbody>
+        </table>
       </div>
     </div>
-
-    <div class="form-group mb-3">
-      <label>Capture 5 Photos for Face Recognition</label>
-      <div class="position-relative">
-        <div class="face-guide"></div>
-        <video id="video" width="640" height="480" autoplay></video>
-        <button type="button" onclick="captureImage()" class="btn btn-success mb-2">Capture Photo</button>
-        <canvas id="canvas" style="display:none;"></canvas>
-        <div id="captured-photo" class="d-flex flex-wrap"></div>
-        <div id="capture-status" class="text-muted"></div>
-      </div>
-      <input type="hidden" name="captured_images" id="captured_images">
-    </div>
-
-    <button type="submit" name="add_employee" class="btn btn-success">Submit</button>
-    <button type="button" onclick="hideAddForm()" class="btn btn-secondary">Back</button>
-  </form>
-</div>
-
-<input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search employees..." class="form-control mb-3" style="max-width: 300px;">
-
-<div class="table-responsive shadow-sm p-5" style="width:100%">
-  <table class="table table-light table-striped">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Email</th>
-        <th>Faculty</th>
-        <th>Course</th>
-        <th>Registration Number</th>
-        <th>Created At</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody id="employeeTable">
-      <?php
-      $result = $conn->query("SELECT * FROM employees ORDER BY id DESC");
-      if ($result->num_rows > 0):
-          while ($row = $result->fetch_assoc()):
-      ?>
-      <tr>
-        <td><?= htmlspecialchars($row['id']) ?></td>
-        <td><?= htmlspecialchars($row['first_name']) ?></td>
-        <td><?= htmlspecialchars($row['last_name']) ?></td>
-        <td><?= htmlspecialchars($row['email']) ?></td>
-        <td><?= htmlspecialchars($row['faculty']) ?></td>
-        <td><?= htmlspecialchars($row['course']) ?></td>
-        <td><?= htmlspecialchars($row['registration_number']) ?></td>
-        <td><?= htmlspecialchars($row['created_at']) ?></td>
-        <td>
-          <a href="edit.php?id=<?= $row['id'] ?>" class="btn btn-warning btn-sm">Edit</a>
-          <a href="?delete_id=<?= $row['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to delete?')">Delete</a>
-        </td>
-      </tr>
-      <?php endwhile; else: ?>
-      <tr><td colspan="10">No employees found.</td></tr>
-      <?php endif; ?>
-    </tbody>
-  </table>
-</div>
-</div>
-</div>
+  </div>
 </div>
 
 <script>
