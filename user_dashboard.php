@@ -104,8 +104,8 @@ $username = $_SESSION['user']['name'] ?? 'User';
 <!-- Main Content -->
 <div class="flex-grow-1">
     <!-- Topbar -->
-    <div class="topbar">
-        <input type="text" class="form-control w-50" placeholder="Search ......">
+    <div class="topbar d-flex justify-content-end">
+        
         <div>
             <span class="badge bg-light text-dark">@ <?php echo htmlspecialchars($username); ?></span>
             <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="User" width="40" height="40" class="rounded-circle ms-2">
@@ -115,11 +115,35 @@ $username = $_SESSION['user']['name'] ?? 'User';
     <!-- Content -->
     <div class="content container ">
     <h3>User Records</h3>
+
+    <form method="get" class="mb-3">
+<div class="d-flex">
+<input type="text" name="search" class="form-control w-50 mx-2" placeholder="Search..." value="<?php echo htmlspecialchars($_GET['search'] ?? ''); ?>">
+<button type="submit" class="btn btn-outline-success">Search</button>
+</div>
+</form>
+
 <?php
 if (!isset($conn)) {
     echo "<div class='alert alert-danger'>Database connection not found.</div>";
 } else {
-    $result = $conn->query("SELECT * FROM attendance ORDER BY created_at DESC");
+$search = $_GET['search'] ?? '';
+$searchSafe = $conn->real_escape_string($search);
+
+if (!empty($searchSafe)) {
+    $sql = "SELECT * FROM attendance 
+            WHERE registration_number LIKE '%$searchSafe%' 
+               OR name LIKE '%$searchSafe%'
+               OR faculty LIKE '%$searchSafe%'
+               OR course LIKE '%$searchSafe%'
+               OR email LIKE '%$searchSafe%'
+            ORDER BY created_at DESC";
+} else {
+    $sql = "SELECT * FROM attendance ORDER BY created_at DESC";
+}
+
+$result = $conn->query($sql);
+
 
     if ($result && $result->num_rows > 0) {
         echo "<table class='table table-striped'>";

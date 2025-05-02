@@ -197,6 +197,7 @@ if (isset($_GET['delete_id'])) {
     <h4 class="mb-4">Attendance Ms</h4>
     <a href="admin_dashboard.php">Dashboard</a>
     <a href="manage_employee.php" class="active">Manage Employee</a>
+    <a href="signup.php">Add User</a>
     <div class="settings">
       <a href="logout.php" class="text-danger">Logout</a>
     </div>

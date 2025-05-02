@@ -6,30 +6,33 @@
         $name = htmlspecialchars($_POST['name']);
         $email = htmlspecialchars($_POST['email']);
         $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-        $role = 'admin'; 
-
+        $role = 'admin';
+    
         // Check if email already exists
         $check = $conn->prepare("SELECT id FROM users WHERE email = ?");
         $check->bind_param("s", $email);
         $check->execute();
         $check->store_result();
-
+    
         if ($check->num_rows > 0) {
-            echo "<h2>Email already registered!</h2>";
-            echo '<p><a href="signup.php">Try Again</a></p>';
+            $_SESSION['register_success'] = false;
+            header("Location: signup.php?error=email_taken");
+            exit;
         } else {
             // Insert new user
             $stmt = $conn->prepare("INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, ?)");
             $stmt->bind_param("ssss", $name, $email, $password, $role);
+    
             if ($stmt->execute()) {
-                echo "<h2>Sign Up Successful!</h2>";
-                echo "<p>Welcome, $name ($role)</p>";
-                echo '<p><a href="index.php">Go to Login</a></p>';
+                $_SESSION['register_success'] = true;
+                header("Location: admin_dashboard.php"); // Redirect to login page
+                exit;
             } else {
-                echo "Something went wrong.";
+                $_SESSION['register_success'] = false;
+                header("Location: signup.php?error=insert_failed");
+                exit;
             }
         }
-
     } elseif (isset($_POST['login'])) {
         $email = htmlspecialchars($_POST['email']);
         $password = $_POST['password'];
